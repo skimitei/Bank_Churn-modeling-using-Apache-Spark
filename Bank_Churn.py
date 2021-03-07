@@ -1,5 +1,5 @@
-#  By Symon Kimitei
-# PROJECT: PREVENTING BANK CUSTOMER CHURN MODELING
+# By Symon Kimitei
+# BANK CUSTOMER CHURN MODELING
 # MODELS USED: NAIVE BAYES CLASSIFIER, LOGISTIC REGRESSION FOR BINARY CLASSIFICATION & DECISION TREE CLASSIFIER
 # USING APACHE SPARK TO DETECT EMAIL SPAM
 #=========================================================================================
@@ -160,7 +160,7 @@ print('Area under the precision-recall curve:', lr_evaluator.evaluate(lr_predict
 # NAIVE BAYES - CLASSIFIER
 #==========================================================================
 
-# FIT the Naïve Bayes classifier
+# FIT the NaÃ¯ve Bayes classifier
 from pyspark.ml.classification import NaiveBayes
 nb = NaiveBayes()
 nb = NaiveBayes(labelCol="Exited", featuresCol="features")
@@ -204,7 +204,7 @@ nb_CV_train_data.show()
 newTrain=nb_CV_train_data.drop("rawPrediction","probability","prediction")
 newTrain =newTrain.withColumnRenamed('Exited', 'label')
 
-# FIT the Naïve Bayes classifier
+# FIT the NaÃ¯ve Bayes classifier
 nb = NaiveBayes()
 paramGrid_nb = ParamGridBuilder().addGrid(nb.smoothing, np.linspace(0.3, 10, 5)).build()
 # Apply five-fold cross validation
